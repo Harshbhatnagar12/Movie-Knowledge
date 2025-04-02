@@ -62,7 +62,7 @@ function Home() {
          <Dropdown title='Filter' options={['tv', 'movie', 'all']}   />
         </div>
 
- <HorizontalCards data={trending}  func={(e) => setcategory(e.target.value)}/>
+        <HorizontalCards data = {trending}  func={(e) => setcategory(e.target.value)}/>
  </div>
 
  </>

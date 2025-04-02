@@ -4,6 +4,7 @@ import 'remixicon/fonts/remixicon.css'
 import Home from './components/Home'
 
 
+
 function App() {
  
 
@@ -11,6 +12,7 @@ function App() {
   <div className='bg-[#1F1E24] w-screen h-screen flex  '>
     <Routes>
       <Route path='/' element={<Home />} />
+     
     </Routes>
   
   </div>
