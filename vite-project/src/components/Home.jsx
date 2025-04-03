@@ -5,6 +5,7 @@ import axios from '../utils/axios'
 import Header from './templates/Header';
 import HorizontalCards from './templates/HorizontalCards';
 import Dropdown from './templates/Dropdown';
+import Loading from './templates/Loading';
 
 
 function Home() {
@@ -66,7 +67,7 @@ function Home() {
  </div>
 
  </>
-  ): <h1 className='text-white ml-[100vh] flex items-center justify-center font-semibold'>Loading...</h1>
+  ): <h1 className='text-white ml-[100vh] flex items-center justify-center font-semibold'><Loading></Loading></h1>
 }
 
 export default Home
