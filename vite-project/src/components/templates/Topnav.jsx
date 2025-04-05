@@ -44,11 +44,12 @@ const Topnav = () => {
 
   
       {searches.length > 0 && query.length > 0 && (
-        <div className="w-[50%] max-h-[50vh] bg-zinc-200 absolute top-[100%] overflow-auto rounded shadow-lg">
+        <div className="z-[100] w-[50%] max-h-[50vh] bg-zinc-200 absolute top-[100%] overflow-auto rounded shadow-lg">
           {searches.map((s,i) => (
             <Link
+             to={`/${s.media_type}/details/${s.id}`}
               key={i}
-              to={`/movie/${s.id}`}
+              // to={`/movie/${s.id}`}
               className="text-zinc-600 hover:text-black hover:bg-zinc-300 duration-300 font-semibold w-full p-5 flex justify-start items-center border-b-2 border-zinc-100"
             >
               <img

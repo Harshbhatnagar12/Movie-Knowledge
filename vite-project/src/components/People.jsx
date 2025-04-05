@@ -75,7 +75,7 @@ const refreshHandler = () => {
         loader={<h1>Loading...</h1>}
         >
 
-        <Cards data={person} title={category}/>
+        <Cards data={person} title="Person"/>
         </InfiniteScroll>
     </div>  
   ): <div className='ml-[96vh]'><Loading/> </div>  
