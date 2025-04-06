@@ -26,7 +26,11 @@ const Cards = ({data, title}) => {
 
          </h1>
 
-   {c.vote_average && (<div className='absolute right-[-10%] bottom-[30%] text-white w-[8vh] h-[8vh] flex justify-center items-center bg-yellow-600 rounded-full text-xl font-semibold'>{(c.vote_average*10).toFixed()} <sup>%</sup> </div> ) }
+   {c.vote_average && (
+    <div className='absolute right-[-10%] bottom-[30%] text-white w-[8vh] h-[8vh] flex justify-center items-center bg-yellow-600 rounded-full text-xl font-semibold'>
+      {(c.vote_average*10).toFixed()} <sup>%</sup> 
+      </div>
+     )}
  
 
       </Link>)}
