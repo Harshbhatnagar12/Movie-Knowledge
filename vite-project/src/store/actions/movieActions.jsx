@@ -1,4 +1,4 @@
-export {removemovie} from '../reducers/movieSlice'
+export {removeemovie} from '../reducers/movieSlice'
 import axios from '../../utils/axios'
 import { loadmovie } from '../reducers/movieSlice'
 
@@ -26,8 +26,7 @@ export const asyncloadmovie = (id) => async(dispatch, getState) => {
 
       dispatch(loadmovie(theultimatedata));
   
-       }
-    catch(e){
+       }catch(e){
    console.log("Error: ", error);
          }
 }

@@ -58,7 +58,7 @@ const refreshHandler = () => {
         <div className=' w-full  flex items-center  '>
           <h1 className='text-2xl font-semibold text-zinc-400'>
            <i  onClick={() => naviagate(-1)}
-            class="hover:text-[#6556CD] ri-arrow-left-line mr-3 ml-5"
+            className="hover:text-[#6556CD] ri-arrow-left-line mr-3 ml-5"
             ></i>{""}
                 Tv Shows <small className='text-sm text-zinc-600 ml-2'> ({category}) </small>
            </h1>

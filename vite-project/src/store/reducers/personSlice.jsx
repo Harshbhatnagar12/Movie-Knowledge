@@ -4,15 +4,15 @@ const initialState = {
   info: null,
 }
 
-export const perosnSlice = createSlice({
-  name: 'perosn',
+export const personSlice = createSlice({
+  name: 'person',
   initialState,
   reducers: {
    
-    loadperosn:(state,action) => {
+    loadperson:(state,action) => {
         state.info = action.payload;
     },
-    removeeperosn: (state,action) => {
+    removeperson: (state,action) => {
         state.info = null;
     }
 
@@ -20,6 +20,6 @@ export const perosnSlice = createSlice({
 })
 
 // Action creators are generated for each case reducer function
-export const { loadperosn, removeperosn } = perosnSlice.actions
+export const { loadperson, removeperson } = personSlice.actions
 
-export default perosnSlice.reducer
+export default personSlice.reducer

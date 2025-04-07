@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import {useDispatch, useSelector} from 'react-redux'
-import { asyncloadmovie, removemovie } from '../store/actions/movieActions';
-import { Link, useLocation, useNavigate, useParams } from 'react-router-dom';
+import { asyncloadmovie, removeemovie } from '../store/actions/movieActions';
+import { Link, Outlet, useLocation, useNavigate, useParams } from 'react-router-dom';
 import Loading from './templates/Loading';
 import HorizontalCards from './templates/HorizontalCards';
 
@@ -11,13 +11,13 @@ const Moviedetails = () => {
    const {id} = useParams();
    const {info} =  useSelector((state) => state.movie);
    const dispatch = useDispatch();
-   console.log(info);
+  
 
 
    useEffect(() => {  
     dispatch(asyncloadmovie(id));
     return () => {
-      dispatch(removemovie());
+      dispatch(removeemovie());
      }
    },[id]);
 
@@ -28,21 +28,21 @@ const Moviedetails = () => {
       backgroundSize: 'cover',
       backgroundRepeat: 'no-repeat'
       }} 
-  className='w-screen h-[180vh] px-[3%] mt-10'>
+  className='relative w-screen h-[180vh] px-[3%] mt-10'>
 
     {/* part 1 navigation  */}
 
       <nav className='w-full h-[10vh] text-zinc-100 flex items-center gap-10 text-xl mt-0'>
       <Link  onClick={() => naviagate(-1)}
-            class="hover:text-[#6556CD] ri-arrow-left-line mr-3 ml-5"
+            className="hover:text-[#6556CD] ri-arrow-left-line mr-3 ml-5"
       ></Link>
       
       <a target='_blank' href={info.detail.homepage}>
-      <i class="ri-external-link-fill"></i> Home Page
+      <i className="ri-external-link-fill"></i> Home Page
       </a>
 
       <a target='_blank' href={`https://www.wikidata.org/wiki/${info.externalid.wikidata_id}`}>
-       <i class="ri-earth-fill"></i> Wiki
+       <i className="ri-earth-fill"></i> Wiki
       </a>
      
       <a target='_blank' href={`https://www.imdb.com/title/${info.externalid.imdb_id}/`}>IMDB</a>
@@ -103,37 +103,14 @@ const Moviedetails = () => {
         </div>
 
    {/* Part 3 Platforms  */}
-        <div className='w-[80%] flex flex-col gap-y-5 mt-10 ' >
-         {info.watchproviders && info.watchproviders.logo_path  && (
-          <div className='flex gap-x-10 items-center text-white '>
-        <h1>Available on Platform</h1>
-        {info.watchproviders.logo_path.map((w)=>(
-          <img
-          title={w.provider_name}
-          className='w-[5vh] h-[5vh] object-cover reounded-md '
-          src={`https://image.tmdb.org/t/p/original/${w.logo_path}`}
-          />
-        ))}
-        </div> 
-        )}
-
-        {info.watchproviders && info.watchproviders.rent  && (
-          <div className='flex gap-x-10 items-center text-white '>
-        <h1>Available on Rent</h1>
-        {info.watchproviders.rent.map((w)=>(
-          <img
-          title={w.provider_name}
-          className='w-[5vh] h-[5vh] object-cover reounded-md '
-          src={`https://image.tmdb.org/t/p/original/${w.logo_path}`}
-          />
-        ))}
-        </div> 
-        )}
+        <div className='w-[80%] flex flex-col ' >
+             
  {info.watchproviders && info.watchproviders.buy  && (
           <div className='flex gap-x-10 items-center text-white '>
         <h1>Available on Buy</h1>
-        {info.watchproviders.buy.map((w)=>(
+        {info.watchproviders.buy.map((w,i)=>(
           <img
+          key={i}
           title={w.provider_name}
           className='w-[5vh] h-[5vh] object-cover reounded-md '
           src={`https://image.tmdb.org/t/p/original/${w.logo_path}`}
@@ -148,6 +125,8 @@ const Moviedetails = () => {
       <hr className='mt-2 mb-4 border-none h-[2px] bg-zinc-500'/>
       <h1 className='text-3xl mt-7 mb-5 font-bold text-white '>Recommendations & Similar Items Stuff</h1>
       <HorizontalCards data = {info.recommendations.length > 0 ? info.recommendations : info.similar}/>
+
+        <Outlet/>
     
 
 
