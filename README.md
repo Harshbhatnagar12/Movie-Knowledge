@@ -58,6 +58,7 @@ A dynamic and responsive web application built with React + Vite and styled usin
 
 ## Live Demo
 
+https://movieverse1.netlify.app/
 
 ## Screenshots
 
