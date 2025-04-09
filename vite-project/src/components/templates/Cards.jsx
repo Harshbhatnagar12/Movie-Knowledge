@@ -16,10 +16,10 @@ const Cards = ({data, title}) => {
       {data.map((c,i)=>
       <Link to={`/${c.media_type || title}/details/${c.id}`} className='relative w-[30vh] ml-[8%]  mb-[5%] mt-9' key={i}>
       <img 
-      className='h-[50vh]  shadow-[8px_17px_38px_2px_rgba(0,0,0,.5)] object-cover' src={`https://image.tmdb.org/t/p/original/${c.backdrop_path || c.profile_path || c.poster_path
+      className='h-[50vh] sm:ml-0 ml-8 shadow-[8px_17px_38px_2px_rgba(0,0,0,.5)] object-cover' src={`https://image.tmdb.org/t/p/original/${c.backdrop_path || c.profile_path || c.poster_path
         }`}
          alt="" />
-         <h1 className='text-2xl text-zinc-200 mt-3 font-semibold '>
+         <h1 className='text-2xl sm:ml-0 ml-14 text-zinc-200 mt-3 font-semibold '>
 
       {/* {c.original_title || c.original_name || c.title || c.name} */}
       {truncateText(c.original_title || c.original_name || c.title || c.name || c.profile_path, 20)}

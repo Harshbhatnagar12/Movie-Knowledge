@@ -21,9 +21,9 @@ function HorizontalCards({data}) {
         <img className='w-full h-[45%] object-center object-cover' src={`https://image.tmdb.org/t/p/original/${ d.backdrop_path || d.profile_path || d.poster_path
         }`} alt="" />
 
-        <div className='text-white p-2 mb-1 h-[15%] text-sm '>
-        <h1 className='text-lg font-semibold'>{d.original_title || d.original_name || d.title || d.name}</h1>
-        <p className=''>{truncateText(d.overview, 55)}<span className="text-zinc-500"> more...</span></p>
+        <div className='text-white p-0 sm:p-2 mb-2 h-[15%] text-sm '>
+        <h1 className='text-sm sm:text-lg font-semibold'>{d.original_title || d.original_name || d.title || d.name}</h1>
+        <p className=''>{truncateText(d.overview, 45)}<span className="text-zinc-500"> more...</span></p>
         </div>
   
       </Link> )}

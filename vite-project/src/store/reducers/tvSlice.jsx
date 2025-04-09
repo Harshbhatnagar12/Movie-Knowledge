@@ -12,7 +12,7 @@ export const tvSlice = createSlice({
     loadtv:(state,action) => {
         state.info = action.payload;
     },
-    removeetv: (state,action) => {
+    removetv: (state,action) => {
         state.info = null;
     }
 

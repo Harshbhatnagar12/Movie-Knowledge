@@ -6,6 +6,7 @@ import { loadperson } from '../reducers/personSlice'
 export const asyncloadperson = (id) => async(dispatch, getState) => {
     try{
       const detail =  await axios.get(`/person/${id}`);
+      const externalid = await axios.get(`/person/${id}/external_ids`)
       const combindedCredits =  await axios.get(`/person/${id}/combined_credits`);  
       const tvCredits =  await axios.get(`/person/${id}/tv_credits`);  
       const movieCredits =  await axios.get(`/person/${id}/movie_credits`);  
@@ -14,8 +15,8 @@ export const asyncloadperson = (id) => async(dispatch, getState) => {
       let theultimatedata = {
         detail: detail.data,
         externalid: externalid.data, 
-        combindedCredits: movieCredits.data,
-        combindedCredits: tvCredits.data,
+        movieCredits: movieCredits.data,
+        tvCredits: tvCredits.data,
         combindedCredits: combindedCredits.data,
       };
 

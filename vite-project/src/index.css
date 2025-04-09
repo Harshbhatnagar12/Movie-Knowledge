@@ -67,3 +67,13 @@ select::-ms-expand {
 .select:hover::after{
     color:#6556cd;
 }
+
+
+
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+  }
+  

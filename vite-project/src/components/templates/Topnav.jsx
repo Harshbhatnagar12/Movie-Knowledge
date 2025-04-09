@@ -26,12 +26,12 @@ const Topnav = () => {
    },[query]);
 
   return (
-    <div className="w-full h-[10vh] relative flex justify-start items-center pl-[20%]">
+    <div className="w-full h-[10vh] relative flex justify-start items-center pl-[20%] ">
       <i className="text-zinc-400 text-xl ri-search-line"></i>
       <input
         onChange={(e) => setquery(e.target.value)}
         value={query}
-        className="w-[50%] text-zinc-200 mx-10 p-3 text-xl outline-none border-none bg-transparent"
+        className="w-[50%] text-zinc-200 mx-2 p-3 text-xl outline-none border-none bg-transparent"
         type="text"
         placeholder="Search movies..."
       />

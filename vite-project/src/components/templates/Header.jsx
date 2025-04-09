@@ -13,9 +13,9 @@ const Header = ({data}) => {
         backgroundSize: 'cover',
         backgroundRepeat: 'no-repeat'
     }}
-     className='w-full h-[50vh] flex flex-col justify-end items-start p-[5%]'>
-      <h1 className='text-3xl font-black text-white w-[70%]'>{data.original_title || data.original_name || data.title || data.name}</h1>
-      <p className='w-[60%] text-white mt-1'>{data.overview.slice(0,200)}...<Link to={`/${data.media_type}/details/${data.id}`} className="text-blue-400 ">more </Link> </p>
+     className='w-full h-[50vh] flex flex-col justify-end items-start p-[5%] '>
+      <h1 className='text-md sm:text-3xl font-black text-white w-[75%] '>{data.original_title || data.original_name || data.title || data.name}</h1>
+      <p className='w-[60%] text-white mt-1 text-sm md:text-md'>{data.overview.slice(0,200)}...<Link to={`/${data.media_type}/details/${data.id}`} className="text-blue-400 ">more </Link> </p>
       <p className='text-white mb-2 pt-2 flex gap-[5.9px]'>
       <i className="text-yellow-500 ri-megaphone-fill "></i>{" "} {data.release_date || data.first_air_date || "No Information"}
       <i className="text-yellow-500 ri-album-fill ml-2 "></i>{" "} {data.media_type.toUpperCase() || "Movie"}
@@ -23,6 +23,9 @@ const Header = ({data}) => {
       <Link to={`/${data.media_type}/details/${data.id}/trailer`} className='bg-[#6556CD] p-3 rounded-md  text-white mt-2  '>
       Watch Trailer
       </Link>
+        
+
+
     </div>
   )
 }

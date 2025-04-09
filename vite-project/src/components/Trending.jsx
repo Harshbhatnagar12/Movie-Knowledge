@@ -56,20 +56,26 @@ const Trending = () => {
       },[category, duration]);
 
   return trending.length > 0 ? (
-    <div className=' w-screen h-screen mt-4'>
-        <div className=' w-full  flex items-center  '>
-          <h1 className='text-2xl font-semibold text-zinc-400'>
+    <div className=' w-full h-full mt-4 overflow-x-hidden'>
+        <div className=' w-full  flex flex-wrap  items-center  '>
+          <h1 className='text-sm sm:text-2xl font-semibold text-zinc-400 flex items-center'>
            <i  onClick={() => naviagate(-1)}
-            className="hover:text-[#6556CD] ri-arrow-left-line mr-3 ml-5"
+            className="hover:text-[#6556CD] cursor-pointer ri-arrow-left-line mr-3 ml-5"
             ></i>{""}
                 Trending    
            </h1>
 
+
+            <div className='w-[35%] sm:w-auto'>
            <Topnav/>
-           <div className='flex mr-6'> 
+            </div>
+           <div className='flex  w-[34%] sm:w-[60%] '> 
           <Dropdown title="Category" options={["movie", "tv", "all"]} func={(e)=>setcategory(e.target.value)}/>
-           <div className='w-[2%] mr-3'></div>
-           <Dropdown title="Duration" options={["week", "day", "month"]} func={(e)=>setduration(e.taregt.value)}/> 
+           <div className='w-[2%] sm:mr-3'></div>
+           <div className='hidden sm:inline'>
+           <Dropdown title="Duration" options={["week", "day", "month"]} func={(e)=>setduration(e.target.value)}/> 
+
+           </div>
            </div>
            
         </div>
@@ -85,7 +91,7 @@ const Trending = () => {
         </InfiniteScroll>
     </div>  
 
-  ): <div className='ml-[96vh]'><Loading/> </div>  
+  ): <Loading/>  
 }
 
 export default Trending

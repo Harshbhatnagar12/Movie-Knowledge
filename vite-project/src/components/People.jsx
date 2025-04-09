@@ -59,7 +59,7 @@ const refreshHandler = () => {
         <div className=' w-full  flex items-center  '>
           <h1 className='text-2xl font-semibold text-zinc-400'>
            <i  onClick={() => naviagate(-1)}
-            className="hover:text-[#6556CD] ri-arrow-left-line mr-3 ml-5"
+            className="hover:text-[#6556CD] cursor-pointer text-2xl ri-arrow-left-line mr-3 ml-5"
             ></i>{""}
                 People 
            </h1>
@@ -78,7 +78,7 @@ const refreshHandler = () => {
         <Cards data={person} title="Person"/>
         </InfiniteScroll>
     </div>  
-  ): <div className='ml-[96vh]'><Loading/> </div>  
+  ): <Loading/>   
 }
 
 export default People;

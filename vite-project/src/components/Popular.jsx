@@ -59,13 +59,15 @@ const refreshHandler = () => {
         <div className=' w-full  flex items-center  '>
           <h1 className='text-2xl font-semibold text-zinc-400'>
            <i  onClick={() => naviagate(-1)}
-            className="hover:text-[#6556CD] ri-arrow-left-line mr-3 ml-5"
+            className="hover:text-[#6556CD] cursor-pointer text-2xl ri-arrow-left-line mr-3 ml-5"
             ></i>{""}
                 Popular    
            </h1>
 
+            <div className='w-[28%] sm:w-[90%]'>
            <Topnav/>
-           <div className='mr-6'>
+            </div>
+           <div className=' flex w-[35%] sm:w-none'>
            <Dropdown  title="Category" options={["tv", "movie"]} func={(e)=>setcategory(e.target.value)}/>
            </div>
            
@@ -81,7 +83,7 @@ const refreshHandler = () => {
         <Cards data={popular} title={category}/>
         </InfiniteScroll>
     </div>  
-  ): <div className='ml-[96vh]'><Loading/> </div>  
+  ): <Loading/>   
     
 }
 

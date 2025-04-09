@@ -58,16 +58,16 @@ function Home() {
  <Topnav/>
  <Header data={wallpaper}/>
  
-        <div className='my-3 p-3 flex justify-between'>
+        <div className='my-3 gap-7 sm:gap-0 p-3 flex justify-between'>
         <h1 className=' text-2xl text-zinc-400 font-semibold'>Trending</h1>
-         <Dropdown title='Filter' options={['tv', 'movie', 'all']}   />
+         <Dropdown  title='Filter' options={['tv', 'movie', 'all']}   />
         </div>
 
         <HorizontalCards data = {trending}  func={(e) => setcategory(e.target.value)}/>
  </div>
 
  </>
-  ): <h1 className='text-white ml-[100vh] flex items-center justify-center font-semibold'><Loading></Loading></h1>
+  ):<Loading/>
 }
 
 export default Home

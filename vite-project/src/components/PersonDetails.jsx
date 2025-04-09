@@ -14,9 +14,6 @@ const PersonDetails = () =>  {
    const dispatch = useDispatch();
    const [category, setcategory] = useState("movie");
 
-   console.log(info);
-
-
    useEffect(() => {  
     dispatch(asyncloadperson(id));
     return () => {
@@ -26,45 +23,44 @@ const PersonDetails = () =>  {
 
 
   return info ? 
-    <div className='px-[10%] w-screen bg-[#1F1E24] h-[150vh] '>
+    <div className=' w-screen bg-[#1F1E24] sm:h-[220vh] h-[380vh]  '>
 
           {/* part 1 navigation  */}
       
-            <nav className='w-full h-[10vh] text-zinc-100 flex items-center gap-10 text-xl mt-0'>
+            <nav className='w-full h-[10vh] text-zinc-100 flex items-center text-sm sm:text-2xl mt-3 px-9 '>
             <Link  onClick={() => naviagate(-1)}
-                  className="hover:text-[#6556CD] ri-arrow-left-line mr-3 ml-5"
+                  className="hover:text-[#6556CD] ri-arrow-left-line "
             ></Link>
-            
-       
             </nav>
 
-            <div className='w-full flex  '>
           {/* {part 2 Left Poster and Details } */}
-          <div className='w-[20%]'>
+
+            <div className='w-full flex px-[10%] flex-col sm:flex-row '>
+          <div className='sm:w-[20%] w-full ml-10 sm:ml-0'>
           <img 
-      className='h-[35vh] shadow-[8px_17px_38px_2px_rgba(0,0,0,.5)] object-cover'
+      className='h-[40vh] shadow-[8px_17px_38px_2px_rgba(0,0,0,.5)] object-cover'
        src={`https://image.tmdb.org/t/p/original/${info.detail.profile_path
         }`}
          alt="" />
-        <hr className='mt-2 mb-4 border-none h-[2px] bg-zinc-500'/>
+        <hr className='mt-3 mb-4 border-none h-[1px] bg-zinc-500'/>
 
         {/* Social Media Links  */}
 
         <div className=' text-2xl text-white flex gap-x-5 '>      
             <a target='_blank' href={`https://www.wikidata.org/wiki/${info.externalid.wikidata_id}`}>
-             <i className="ri-earth-fill"></i> Wiki
+             <i className="ri-earth-fill"></i> 
             </a>
 
             <a target='_blank' href={`https://www.facebook.com/${info.externalid.facebook_id}`}>
-             <i className="ri-facebook-circle-fill"></i> Wiki
+             <i className="ri-facebook-circle-fill"></i> 
             </a>
 
             <a target='_blank' href={`https://www.instagram.com/${info.externalid.instagram_id}`}>
-             <i className="ri-instagram-fill"></i> Wiki
+             <i className="ri-instagram-fill"></i> 
             </a>
 
             <a target='_blank' href={`https://www.twitter.com/${info.externalid.twitter_id}`}>
-             <i className="ri-twitter-x-fill"></i> Wiki
+             <i className="ri-twitter-x-fill"></i> 
             </a>
 
         </div>
@@ -126,22 +122,22 @@ const PersonDetails = () =>  {
           </div>
 
           {/* Part 3 right Details and Information  */}
-          <div className='w-[80%] ml-[5%]'>
+          <div className='w-[80%] ml-[5%] '>
 
           <h1 className='text-6xl text-zinc-400 my-5 font-black'>
              {info.detail.name}
         </h1>
 
         <h1 className='text-xl text-zinc-400 font-semibold'>
-          Biography
+          Biography 
         </h1>
-        <p className='text-zinc-400 mt-3'>{info.detail.biography}</p>
+        <p className='text-zinc-400 mt-3'>{info.detail.biography.slice(0, 1390)}</p>
 
-        <h1 className='mt-5 text-lg text-zinc-400 font-semibold'>
+        <h1 className='mt-5 mb-3 text-xl text-zinc-400 font-semibold'>
           Summary
         </h1>
 
-        <HorizontalCards data={info.combinedCredits.cast}/>
+        <HorizontalCards data={info.combindedCredits.cast}/>
 
 
         <div className='w-full flex  justify-between'>
@@ -149,8 +145,11 @@ const PersonDetails = () =>  {
         <h1 className='mt-5 text-xl text-zinc-400 font-semibold'>
           Acting
         </h1>
+         
 
+         <div className='sm:inline hidden'>
         <Dropdown title="Category" options={["tv", "movie"]} func={(e) => setcategory(e.target.value)}/>
+         </div>
 
         </div>
 
@@ -180,11 +179,8 @@ const PersonDetails = () =>  {
           </div>
 
             </div>
-
-
       
-      
-    </div> : <Loading/>
+    </div> : <Loading />
   
 }
 

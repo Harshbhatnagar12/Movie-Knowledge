@@ -12,13 +12,12 @@ const TvDetails = () => {
      const {id} = useParams();
      const {info} =  useSelector((state) => state.tv);
      const dispatch = useDispatch();
-     console.log(info);
   
   
      useEffect(() => {  
       dispatch(asyncloadtv(id));
       return () => {
-        dispatch(removeetv());
+        dispatch(removetv());
        }
      },[id]);
 
@@ -29,13 +28,13 @@ const TvDetails = () => {
         backgroundSize: 'cover',
         backgroundRepeat: 'no-repeat'
         }} 
-    className='relative w-screen h-[180vh] px-[3%] mt-10'>
+    className='relative w-screen h-[220vh] sm:h-[180vh] px-[3%] '>
   
       {/* part 1 navigation  */}
   
-        <nav className='w-full h-[10vh] text-zinc-100 flex items-center gap-10 text-xl mt-0'>
+        <nav className='w-full h-[10vh] text-zinc-100 flex items-center gap-10 text-sm sm:text-lg mt-0'>
         <Link  onClick={() => naviagate(-1)}
-              class="hover:text-[#6556CD] ri-arrow-left-line mr-3 ml-5"
+              className="hover:text-[#6556CD] cursor-pointer ri-arrow-left-line mr-3 text-2xl ml-5"
         ></Link>
         
         <a target='_blank' href={info.detail.homepage}>
@@ -51,9 +50,9 @@ const TvDetails = () => {
         </nav>
   
         {/* part 2 Poster and Details */}
-        <div className='w-full flex '>
+        <div className='w-full flex flex-col sm:flex-row mt-3'>
         <img 
-        className='h-[50vh] shadow-[8px_17px_38px_2px_rgba(0,0,0,.5)] object-cover'
+        className='h-[60vh] shadow-[8px_17px_38px_2px_rgba(0,0,0,.5)] object-cover mb-3 sm:mb-0'
          src={`https://image.tmdb.org/t/p/original/${info.detail.backdrop_path || info.detail.poster_path
           }`}
            alt="" />
@@ -73,7 +72,7 @@ const TvDetails = () => {
   
         <div 
         className='flex text-white items-center gap-x-1 mt-3 mb-5'>
-        <span className='right-[-10%] bottom-[30%] mt-2 rounded-full text-white w-[8vh] h-[8vh] flex justify-center items-center bg-yellow-600  text-xl font-semibold'>
+        <span className='right-[-10%] bottom-[30%] mt-2 sm:mr-0 mr-2 rounded-full text-white w-[8vh] h-[8vh] flex justify-center items-center bg-yellow-600  text-xl font-semibold'>
         {(info.detail.vote_average*10).toFixed()} <sup>%</sup> 
         </span>
         
@@ -107,7 +106,7 @@ const TvDetails = () => {
           <div className='w-[80%] flex flex-col ' >
                
    {info.watchproviders && info.watchproviders.buy  && (
-            <div className='flex gap-x-10 items-center text-white '>
+            <div className='mt-8 sm:mt-0 flex gap-x-10 items-center text-white '>
           <h1>Available on Buy</h1>
           {info.watchproviders.buy.map((w,i)=>(
             <img
@@ -123,7 +122,7 @@ const TvDetails = () => {
   
   
         {/* Part 4 Recommendation  */}
-        <hr className='mt-2 mb-4 border-none h-[2px] bg-zinc-500'/>
+        <hr className='mt-8 mb-4 border-none h-[2px] bg-zinc-500'/>
         <h1 className='text-3xl mt-7 mb-5 font-bold text-white '>Recommendations & Similar Items Stuff</h1>
         <HorizontalCards data = {info.recommendations.length > 0 ? info.recommendations : info.similar}/>
   
