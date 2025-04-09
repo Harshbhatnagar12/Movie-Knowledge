@@ -1,4 +1,4 @@
-# MovieVerse-Project
+## 🎥 MovieVerse-Project
 A dynamic and responsive web application built with React + Vite and styled using Tailwind CSS. This app provides trending, popular, and detailed information about movies, TV shows, and people from the entertainment industry using API integration.
 
 
