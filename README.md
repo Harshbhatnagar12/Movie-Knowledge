@@ -60,14 +60,21 @@ A dynamic and responsive web application built with React + Vite and styled usin
 
 
 ## Screenshots
-![Screenshot (47)](https://github.com/user-attachments/assets/4538fcd6-de93-48f5-a328-5a4989eccd14)
-![Screenshot (48)](https://github.com/user-attachments/assets/17a582cb-f736-4a5f-931c-5f6b67b2b0f3)
-![Screenshot (49)](https://github.com/user-attachments/assets/f57b324a-9dde-4808-b7da-b6251adc0c23)
-![Screenshot (50)](https://github.com/user-attachments/assets/29c9139a-cee5-4373-b9ba-8f1843e8c161)
-![Screenshot (51)](https://github.com/user-attachments/assets/dedc6e38-de28-4d8b-8bf8-7c53976b1746)
-![Screenshot (52)](https://github.com/user-attachments/assets/715d6ad7-60d1-4203-be52-ac8fd2197a45)
-![Screenshot (53)](https://github.com/user-attachments/assets/6edbb16e-26c1-48fb-9b77-962ada2e87e4)
-![Screenshot (54)](https://github.com/user-attachments/assets/f3d7eb1e-4ad4-4cf1-8741-f65e5b71e52b)
+https://67f6e1896e8c0593e5fb6edf--sparkling-tanuki-ca70ad.netlify.app/
+![Screenshot (48)](https://github.com/user-attachments/assets/b3af9205-9eeb-40c6-b7c1-2d53a7164a21)
+![Screenshot (49)](https://github.com/user-attachments/assets/fe46c1a5-93e0-460a-a1c9-be9ca356ab3a)
+![Screenshot (50)](https://github.com/user-attachments/assets/16865103-eb06-42df-9c2e-079bf7230f1a)
+![Screenshot (51)](https://github.com/user-attachments/assets/3a1270c1-2c32-4458-bc05-1c35e01252ca)
+![Screenshot (52)](https://github.com/user-attachments/assets/b510c566-e549-4947-a1ea-5af1280f456e)
+![Screenshot (53)](https://github.com/user-attachments/assets/77a13d4d-f753-4ee2-99fd-44c8c2205997)
+![Screenshot (54)](https://github.com/user-attachments/assets/c19ccd89-0a28-41e6-8517-6a1b6f1a2229)
+
+
+
+
+
+
+
 
 
 
